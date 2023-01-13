@@ -1,25 +1,62 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
 
 function App() {
+  const [time, setTime] = useState(1);
+
+  const handleClick = () => {
+    let newTime;
+    if (time >= 24) {
+      newTime = 1;
+    } else {
+      newTime = time + 1;
+    }
+    setTime(newTime);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <><div>
+      <span>현재 시간 : {time} 시</span>
+      <button onClick={handleClick}>+1 버튼</button>
     </div>
+    <Name />
+    </>
   );
+}
+
+const checkRander = () => {
+  console.log('계속 들어옴 !')
+  return ["홍길동", "김민수"];
+};
+
+function Name() {
+  const [names, setNames] = useState(() => {
+    /* 콜백함수로 설정하면 랜더링할때마다 호출이 아닌 1번만 호출 */
+    return checkRander();
+  });
+  const [input, setInput] = useState(['']);
+
+  const nameUpload = () => {
+    setNames((prevState) => {
+      /* spred 문법 기존 배열은 새로운 형태로 복사 */
+      return([input, ...prevState]);
+    });
+  }
+
+  const updateName = (e) => {
+    /* input 값이 변경 될때마다 업데이트 */
+    setInput(e.target.value);
+  }
+
+  return (
+    <div>
+      <input type="text" value = {input} onChange = {updateName}/>
+      <button onClick = {nameUpload}>Upload</button>
+      {names.map((name, index) => {
+        /** JS에서의 map은 반복문 */
+        return <p key={index}>{name}</p>
+      })}
+    </div>
+  )
 }
 
 export default App;
