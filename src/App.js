@@ -1,5 +1,5 @@
 import { useState } from 'react';
-
+import { HookUseEffect } from './useEffect';
 function App() {
   const [time, setTime] = useState(1);
 
@@ -14,11 +14,13 @@ function App() {
   }
 
   return (
-    <><div>
-      <span>현재 시간 : {time} 시</span>
-      <button onClick={handleClick}>+1 버튼</button>
-    </div>
-    <Name />
+    <>
+      <div>
+        <span>현재 시간 : {time} 시</span>
+        <button onClick={handleClick}>+1 버튼</button>
+      </div>
+      <Name />
+      <HookUseEffect />
     </>
   );
 }
@@ -29,15 +31,16 @@ const checkRander = () => {
 };
 
 function Name() {
-  const [names, setNames] = useState(() => {
+  const [names, setNames] = useState(() => 
     /* 콜백함수로 설정하면 랜더링할때마다 호출이 아닌 1번만 호출 */
-    return checkRander();
-  });
+    checkRander()
+  );
   const [input, setInput] = useState(['']);
 
   const nameUpload = () => {
     setNames((prevState) => {
       /* spred 문법 기존 배열은 새로운 형태로 복사 */
+      console.log('이전 배열 값 :: ', prevState)
       return([input, ...prevState]);
     });
   }
