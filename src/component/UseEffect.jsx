@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
+import { Timer } from "./Timer";
  
-export function HookUseEffect() {
+export const HookUseEffect = () => {
   const [count, setCount] = useState(1);
   const [name, setName] = useState('');
 
@@ -38,3 +39,15 @@ export function HookUseEffect() {
     </div>
   );
 }
+
+export const TimerToggle = () => {
+  const [showTimer, setShowTimer] = useState(false);
+
+  return (
+    <div>
+      <p>----------------------------------------</p>
+      {showTimer && <Timer />}
+      <button onClick={() => setShowTimer(!showTimer)}>Toggle Timer</button>
+    </div>
+  )
+};

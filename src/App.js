@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import { HookUseEffect } from './useEffect';
-function App() {
+import { HookUseEffect, TimerToggle } from './component/UseEffect';
+import { UseRefStudy, CountRefStudy } from './component/UseRefStudy';
+const App = () => {
   const [time, setTime] = useState(1);
 
   const handleClick = () => {
@@ -21,6 +22,9 @@ function App() {
       </div>
       <Name />
       <HookUseEffect />
+      <TimerToggle />
+      <UseRefStudy />
+      <CountRefStudy />
     </>
   );
 }
@@ -30,7 +34,7 @@ const checkRander = () => {
   return ["홍길동", "김민수"];
 };
 
-function Name() {
+const Name = () => {
   const [names, setNames] = useState(() => 
     /* 콜백함수로 설정하면 랜더링할때마다 호출이 아닌 1번만 호출 */
     checkRander()
@@ -52,6 +56,7 @@ function Name() {
 
   return (
     <div>
+      <p>----------------------------------------</p>
       <input type="text" value = {input} onChange = {updateName}/>
       <button onClick = {nameUpload}>Upload</button>
       {names.map((name, index) => {
