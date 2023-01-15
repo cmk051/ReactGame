@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 
 export const UseRefStudy = () => {
   const [count, setCount] = useState(0);
@@ -55,19 +55,40 @@ export const CountRefStudy = () => {
   )
 };
 
-// export const RefTest = () => {
-//   const [count, setCount] = useState(0);
-//   const renderCount = useRef(1);
+export const RefCount = () => {
+  const [count, setCount] = useState(0);
+  const renderCount = useRef(1);
 
-//   useEffect(() => {
-//     renderCount.current = renderCount.current + 1;
-//     console.log('렌더링 수 :: ', renderCount.current);
-//   });
+  useEffect(() => {
+    renderCount.current = renderCount.current + 1;
+    // console.log('렌더링 수 :: ', renderCount.current);
+  });
+  /**함수를 바로 호출하거나, 아니면 콜백함수로 setRefCount 를 호출 */
+  return (
+    <div>
+      <p>Count : {count}</p>
+      <button onClick={() => {setCount(count + 1)}}>Count를 올려라</button>
+    </div>
+  )
+};
 
-//   return (
-//     <div>
-//       <p>Count : {count}</p>
-//       <button onClick={setCount(count + 1)}>Count를 올려라</button>
-//     </div>
-//   )
-// };
+export const DomRefTest = () => {
+  const inputRef = useRef();
+  
+  /**ref는 DOM을 조작하기 쉽다 */
+  useEffect(() => {
+    inputRef.current.focus();
+  }, [])
+
+  const alertLogin = () => {
+    alert(`환영합니다! ${inputRef.current.value}!!`);
+    inputRef.current.focus();
+  }
+  return (
+    <div>
+      <p>----------------------------------------</p>
+      <input type="text" placeholder="usename" ref={inputRef}/>
+      <button onClick={alertLogin}>로그인</button>
+    </div>
+  );
+};

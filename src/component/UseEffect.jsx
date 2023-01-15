@@ -27,7 +27,7 @@ export const HookUseEffect = () => {
 //   });
 
   useEffect(() => {
-    console.log('mounted 일때만 호출 ');
+    // console.log('mounted 일때만 호출 ');
   }, []);
 
   return (

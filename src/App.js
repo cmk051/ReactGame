@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { HookUseEffect, TimerToggle } from './component/UseEffect';
-import { UseRefStudy, CountRefStudy } from './component/UseRefStudy';
+import { UseRefStudy, CountRefStudy, RefCount, DomRefTest } from './component/UseRefStudy';
+import { UseContextTest } from './component/UseContextStudy';
 const App = () => {
   const [time, setTime] = useState(1);
 
@@ -25,12 +26,15 @@ const App = () => {
       <TimerToggle />
       <UseRefStudy />
       <CountRefStudy />
+      <RefCount />
+      <DomRefTest />
+      <UseContextTest />
     </>
   );
 }
 
 const checkRander = () => {
-  console.log('계속 들어옴 !')
+  // console.log('계속 들어옴 !')
   return ["홍길동", "김민수"];
 };
 
