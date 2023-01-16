@@ -4,6 +4,9 @@ import { UseRefStudy, CountRefStudy, RefCount, DomRefTest } from './component/Us
 import { UseContextTest } from './component/UseContextStudy';
 import { UseMemoStudy } from './component/UseMemoStudy';
 import { UseCallbackTest } from './component/UseCallbackStudy';
+import { UseReducerTest } from './component/UseReducerStudy';
+import { ReactMemoTest1 } from './component/ReactMemoStudy';
+
 const App = () => {
   const [time, setTime] = useState(1);
 
@@ -33,6 +36,8 @@ const App = () => {
       <UseContextTest />
       <UseMemoStudy />
       <UseCallbackTest />
+      <UseReducerTest />
+      <ReactMemoTest1 />
     </>
   );
 }
