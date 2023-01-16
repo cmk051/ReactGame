@@ -6,6 +6,7 @@ export const UseMemoStudy = () => {
 
   /** 객체형식은 원시 타입이 아니라서 할당될 때마다 주소값이 바뀐다. 한마디로 렌더링될때마다 주소값이 바뀐다. 
    *  useMemo는 느낌이 useEffect 랑 비슷하다고 생각을 했다. 차이점은 캐시에 저장을 한다는 점이 있다.
+   *  렌더링될때 state가 변경되면 하위 컴포넌트 전체가 렌더링이 된다. useMemo를 사용하면 그 부분만 호출이된다.
    */
 
   const location = useMemo(() => {
@@ -23,7 +24,7 @@ export const UseMemoStudy = () => {
    *  여기서는 location 이 바꼈을때만 호출된다.
    */
   useEffect(() => {
-    console.log('useEffect가 호출 ! !');
+    // console.log('useEffect가 호출 ! !');
   }, [location]);
 
   return(

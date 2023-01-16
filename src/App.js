@@ -3,6 +3,7 @@ import { HookUseEffect, TimerToggle } from './component/UseEffect';
 import { UseRefStudy, CountRefStudy, RefCount, DomRefTest } from './component/UseRefStudy';
 import { UseContextTest } from './component/UseContextStudy';
 import { UseMemoStudy } from './component/UseMemoStudy';
+import { UseCallbackTest } from './component/UseCallbackStudy';
 const App = () => {
   const [time, setTime] = useState(1);
 
@@ -31,6 +32,7 @@ const App = () => {
       <DomRefTest />
       <UseContextTest />
       <UseMemoStudy />
+      <UseCallbackTest />
     </>
   );
 }
