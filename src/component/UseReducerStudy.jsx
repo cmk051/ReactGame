@@ -39,7 +39,8 @@ export const UseReducerTest = () => {
    * 
   */
   const [studentsInfo, dispatch] = useReducer(reducer, initialState);
-
+  console.log('studentsInfo :: ', studentsInfo);
+  console.log('initialState :: ', initialState);
   return (
     <div>
       <h1>출석부</h1>
