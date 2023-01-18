@@ -1,2 +1,2 @@
-# ReactGame
+# ReactStudy
 ReactStudy
