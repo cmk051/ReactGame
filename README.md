@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # React Hooks 정리
 
 ### React.js 를 시작하기 전에 React Hooks 공부를 먼저 진행하고 강의를 듣고 싶어서 React LifeCycle 과 Hooks 공부를 먼저 진행했다.
@@ -72,3 +73,7 @@ const Test = () = > {
 * const [state, dispatch] = useReducer(reducer, initialState);
 * dispatch로 액션을 발생시키면 초기값 initialState 을 가진 reducer 라는 함수를 호출한다. 함수 결과를 state 로 반환한다.
 * dispatch는 dispatch({type: 타입명, payload: 보낼데이터}) 로 발생 시킬 수 있다.
+=======
+# ReactStudy
+ReactStudy
+>>>>>>> 4d0f7c3590922a0029a69e1c6c53b148e7cc42e0
